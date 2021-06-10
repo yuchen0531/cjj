@@ -1,0 +1,335 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>康健人壽</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js" integrity="sha512-M+qMI1PHRcYcOpJzeJlaWbVVx2JJyPIwZas8or7dc97LZOokjvbpfRxymhVtlJLyjiF3wGyr0FJOA4DLONLVLw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      let logtime = new Date().getTime()
+    </script>
+  <style>
+    .home{
+      background-color: rgb(255, 255, 255);
+      height: 100vh;
+      width: 100%;
+      min-width: 320px;
+    }
+    .container{
+    }
+    .h8{
+      font-size: 1.5rem;
+    }
+    .h7{
+      font-size: 1.375rem;
+    }
+    .h6{
+      font-size: 1.25rem;
+    }
+    .h5{
+      font-size: 1.125rem;
+    }
+    .h4{
+      font-size: 1rem;
+    }
+    .h3{
+      font-size: 0.875rem;
+    }
+    .h2{
+      font-size: 0.75rem;
+    }
+    .header {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+      border-bottom: #d6d4d5 1px solid;
+      border-top: #d4d4d4 6px solid;
+      margin: 0;
+      padding: 0 15px;
+      color: #333;
+    }
+    .cursor-point{
+      cursor: pointer;
+    }
+    .header img {
+      height: 35px;
+      width: auto;
+      margin: 9px auto 0 auto;
+      float: none;
+    }
+    .wrap {
+      /* max-width: 850px; */
+      margin: 0 auto;
+      width: 100%;
+    }
+    .input-frame{
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid #a7a7a7;
+      width: fit-content;
+    }
+    .input-frame input{
+      width: 160px;
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+    .btn{
+      max-width: 350px;
+      color: #fff;
+      background-color: #23a2c5;
+      border-color: #23a2c5;
+    }
+    .btn-click{
+      cursor: pointer;
+    }
+    input[type="date"]{
+        display:block;
+        /* Solution 1 */
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+      
+        /* Solution 2 */
+        /* min-width: 96%; */
+    }
+    @media only screen and (min-width: 600px) {
+    .h8{
+      font-size: 1.875rem;
+    }
+    .h7{
+      font-size: 1.75rem;
+    }
+    .h6{
+      font-size: 1.5rem;
+    }
+    .h5{
+      font-size: 1.375rem;
+    }
+    .h4{
+      font-size: 1.25rem;
+    }
+    .h3{
+      font-size: 1.125rem;
+    }
+    .h2{
+      font-size: 1rem;
+    }
+    }
+  </style>
+</head>
+<body>
+  <div class="home">
+    <div class="header">
+      <div class="wrap">
+        <img src="https://uupon.tw/images/logo.svg" height="50px"><br>
+        <p class="h3">│ 會員註冊 │</p>
+      </div>
+    </div>
+    <div class="text-center d-flex justify-content-center">
+      <div>
+        <p class="text-black-50 font-weight-bold h7 mb-1 mt-5">新手會員專屬好康!</p>
+        <p class="text-danger font-weight-bold h4 mb-0">加入康健人壽賺40點!</p>
+        <p class="text-danger font-weight-bold h4 mb-3">填寫資料即可獲得點數及好康活動訊息!</p>
+        <form>
+          <div class="input-frame mb-2 mx-auto d-flex align-items-center">
+            <span class="h5 font-weight-bold mb-0">姓名 </span><input type="text" id="name" name="name"><br>
+          </div>
+          <div class="input-frame mb-2 mx-auto d-flex align-items-center">
+            <span class="h5 font-weight-bold mb-0">生日 </span><input id="date" type="date" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}"><br>
+          </div>
+        </form>
+        <div class="d-flex justify-content-center align-items-center">
+          <input type="checkbox" id="earn" class="mb-0"><span class="ml-1 mb-0">我想獲得更多保障建議</span>
+        </div>
+        <span class="text-danger h3 d-none" id="notice">*請先填寫姓名、生日</span>
+        <div class="mt-5 px-5">
+          <p class="h3">點選&lt;完成&gt;則表示已閱讀並同意<u><a target="_blank" href="https://bit.ly/3dEA74B">本活動注意事項</a></u>、<u><a target="_blank" href="https://www.cigna.com.tw/leadform/clause/privacy.php">康健人壽個資條款</a></u>及送出資料</p>
+        </div>
+        <div data-action="submit" class="btn-click w-75 mx-5 btn my-2 h4 py-2">完成</div><br>
+        <div data-action="reject" class="btn-click w-75 mx-5 btn mb-2 h4 py-2">我想先看看其他賺點活動</div><br>
+        <p data-action="cancel" class="btn-click mx-auto"><u>略過</u></p>
+        <input type="hidden" name="returnURL" value="/index.do">
+    
+        <input type="hidden" name="mn" value="${memberData.KAIIN_NO}">
+        <input type="hidden" name="mb" value="${memberData.CP_NO}">
+        <input type="hidden" name="mn_app" value='<%=request.getParameter("mn")%>'>
+        <input type="hidden" name="mb_app" value='<%=request.getParameter("mb")%>'>
+      </div>
+    </div>
+  </div>
+  <script>
+	;(function(p,l,o,w,i,n,g) { 
+    	if (!p[i]) { 
+       		p['gupns'] = p['gupns'] || []; 
+        	p['gupns'].push(i);
+        	p[i] = function() { 
+            (p[i].q = p[i].q || []).push(arguments);
+        };
+        p[i].q = p[i].q || [];
+        p[i].l = 1 * new Date();
+        n = l.createElement(o);
+        g = l.getElementsByTagName(o)[0];
+        n.async = 1;
+        n.src = w;
+        g.parentNode.insertBefore(n,g);
+    	}
+	} (window, document, 'script', 'https://hq.uupon.com/uutrack/js/bundle.js', 'MyTrack'));
+	</script>
+  	<script>
+      function callNativeMethod(action,para) {
+
+        var dict = [];
+        if ( para != null ) {
+            dict = para;
+        }
+
+        var parameter = {
+            "action" : action,
+            "payload" : dict
+        };
+
+        var platform = getMobileOperatingSystem();
+
+        if (platform=='Android') {
+            app.webCallback(action, JSON.stringify(parameter));
+        } else if (platform=='iOS') {
+            window.webkit.messageHandlers.callbackHandler.postMessage(parameter);
+        }
+      }
+      function getMobileOperatingSystem() {
+          var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+          
+          if (/windows phone/i.test(userAgent)) {
+              return "Windows Phone";
+          }
+
+          if (/android/i.test(userAgent)) {
+              return "Android";
+          }
+
+          // iOS detection from: http://stackoverflow.com/a/9039885/177710
+          if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+              return "iOS";
+          }
+
+          return "unknown";
+      }
+      function isWebview() {
+        var useragent = navigator.userAgent;
+        var rules = ['WebView','(iPhone|iPod|iPad)(?!.*Safari\/)','Android.*(wv|\.0\.0\.0)'];
+        var regex = new RegExp(`(${rules.join('|')})`, 'ig');
+        return Boolean(useragent.match(regex));
+      }
+      function linkPage(pageId) {
+        callNativeMethod('gotoPage',{
+          'pageId' : pageId
+        });
+      }
+    	let returnURL = document.querySelector('input[name="returnURL"]').value
+
+    	let mn = document.querySelector('input[name="mn"]').value 
+    	let mb = document.querySelector('input[name="mb"]').value
+    	if (mn.length == 0) mn = document.querySelector('input[name="mn_app"]').value
+    	if (mb.length == 0) mb = document.querySelector('input[name="mb_app"]').value
+    	MyTrack('setUserId', mn)
+
+    let allbtn = document.querySelectorAll('.btn-click')
+    allbtn.forEach(item => {
+      item.addEventListener('click', function btnclick(){
+        let nameVal = document.querySelector('#name').value
+        let dateVal = document.querySelector('#date').value.split('-').join('/')
+        let earn = document.querySelector('#earn').checked ? 'Y':'N'
+        if  (item.dataset.action === 'submit' && (nameVal === '' || dateVal === '')) {
+          document.querySelector('#notice').classList.remove('d-none')
+          return
+        }
+        let leaveTime = new Date().getTime()
+        let stayTime  = Math.floor((leaveTime - logtime) / 1000)
+        let device = getMobileOperatingSystem()
+        let webview = isWebview()
+        // 頁面跳轉
+        switch(item.dataset.action) {
+          case 'submit':
+          MyTrack('logEvent', 'click', {
+            eventTag : '康健首頁導會員',
+            eventName : 'btn_完成',
+            stayTime : stayTime
+          })
+          // post資料
+          $.ajax({
+            url: 'https://event.uupon.com/cigna/apply.php',
+            type: 'POST',
+            cache: false,
+            crossDomain: true,
+            // xhrFields: {
+            //   withCredentials: true // 跨域請求是否附帶 Cookies/HTTP Auth/Client SSL, xhr.withCredentials = true, Server 設定 Access-Control-Allow-Origin
+            // },
+            data: {
+              mn : mn, // 會員編號
+              um : mb, // 手機
+              un : nameVal, // 姓名
+              ub : dateVal, // 生日(YYYY/MM/DD)
+              ua : earn // 使否同意(Y/N)
+            },
+            timeout: 600000,
+            dataType: 'json',
+            success: function (info) {
+              if (device !== 'unknown' && webview) {
+                linkPage('CloseCigna')		
+              } else {
+                window.location.href = returnURL			
+              }
+            },
+            error: function (data) {
+              // console.log("請求失敗");
+            }
+          })
+            break
+          case 'reject':
+            MyTrack('logEvent', 'click', {
+              eventTag : '康健首頁導會員',
+              eventName : 'btn_我想先看看其他賺點活動',
+              stayTime : stayTime
+            })
+            if (device !== 'unknown' && webview) {
+              linkPage('CignaRewardPoint')		
+            } else {
+              window.location.href = '/activityPoint/list.do'		
+            }
+            break
+          case 'cancel':
+            MyTrack('logEvent', 'click', {
+              eventTag : '康健首頁導會員',
+              eventName : 'btn_略過',
+              stayTime : stayTime
+            })
+            if (device !== 'unknown' && webview) {
+              linkPage('CloseCigna')		
+            } else {
+              window.location.href = returnURL			
+            }
+            break
+          default:
+            break
+        }
+      })
+    })
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-58071296-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
+
